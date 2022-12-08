@@ -1,0 +1,81 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+
+      <mat-card class="card3 card">
+
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+          <h3 class="title">Manage Devices</h3>
+        </mat-card-title>
+        <div fxLayout="column" fxLayoutGap="20px" fxLayout.gt-md="row" fxLayoutAlign="space-around" class="content">
+          <div class="blocks">
+            <button (click)="addDevice()" mat-raised-button class="add-button">
+              <mat-icon>add</mat-icon>
+              Add New Device
+            </button>
+          </div>
+        </div>
+
+        <section class="py-19">
+          <div class="">
+            <div class="col mb-3" *ngFor="let device of deviceList">
+              <div class=" card  card2 h-100">
+                <img src="assets/img/lightbulb.png" style="margin-left:30px" alt="logo">
+                <div class="card-body p-4">
+                  <div class="text-center">
+                    <div>
+                      <fa-icon [icon]="faInfo"></fa-icon>
+                      Description : {{device.description}}
+                    </div>
+                    <div>
+                      <fa-icon [icon]="faBolt"></fa-icon>
+                      MaxConsumation : {{device.maxConsumation}} kW/h
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <div>
+                      <fa-icon [icon]="faMarker"></fa-icon>
+                      Address : {{device.address}}
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <div *ngIf="check(device.user)">
+                      <fa-icon [icon]="faUser"></fa-icon>
+
+                        Owner :{{device?.user?.username}}
+
+                    </div>
+
+                    <div *ngIf="!check(device.user)">
+                      <fa-icon [icon]="faUser"></fa-icon>
+
+                      Owner : None
+
+
+
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" (click)="deleteDeviceConfirmation(device.id)" class="btn btn-submit"
+                        style="margin-left:40px">
+                  <fa-icon [icon]="faTrash"></fa-icon>
+                  Delete
+                </button>
+                <button type="button" (click)="editDevice(device.id !=null? device.id :1)" class="btn btn-submit">
+                  <fa-icon [icon]="faEdit"></fa-icon>
+                  Edit
+                </button>
+              </div>
+
+            </div>
+            <tr>
+              <td *ngIf="deviceList.length == 0" colspan="6">No Device Found</td>
+            </tr>
+          </div>
+        </section>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

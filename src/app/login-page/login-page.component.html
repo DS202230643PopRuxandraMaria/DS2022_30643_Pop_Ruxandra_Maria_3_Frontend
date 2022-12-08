@@ -1,0 +1,22 @@
+<div class="signin-content">
+  <mat-card>
+    <mat-card-content>
+      <form>
+        <p>Please login </p>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="User" id="username" required>
+
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Password" id="password" required>
+
+        </mat-form-field>
+
+
+        <button class="btn btn-submit" [disabled]="!isAllComplete()"
+                (click)="onSubmit()">Login
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

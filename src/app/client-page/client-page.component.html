@@ -1,0 +1,85 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+
+      <mat-card class="card">
+
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+          <h3 class="title">Your Device</h3>
+        </mat-card-title>
+        <div *ngIf="  showDate" class="data">
+          <h3> Select a date: <input type="date" id="date" [valueAsDate]="currentDate" (change)="changeDate() "/></h3>
+        </div>
+
+
+        <div class="container-fluid">
+          <div class="card-group col-xs-12">
+            <div class="row">
+
+              <div class="col-md-2">
+                <section class="py-5 a">
+                  <div class="container px-4 px-lg-5 ">
+                    <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-1 row-cols-xl-1 justify-content-center device">
+
+                      <div *ngIf="this.device">
+                        <div class="card h-100">
+
+                          <img src="assets/img/lightbulb.png" alt="logo">
+
+                          <div class="card-body p-4">
+                            <div class="text-center">
+                              <div>
+                                <fa-icon [icon]="faInfo"></fa-icon>
+                                Description : {{device.description}}
+                              </div>
+                              <div>
+                                <fa-icon [icon]="faBolt"></fa-icon>
+                                MaxConsumation : {{device.maxConsumation}}
+                              </div>
+                              <div>
+                                <fa-icon [icon]="faMarker"></fa-icon>
+                                Address : {{device.address}}
+                              </div>
+                            </div>
+                            <div class="block">
+
+                              <div class="text-center" *ngIf="!this.showDate">
+
+                                <button type="button" (click)="generateConsumation(device.id !=null? device.id :1)" class="btn btn-submit">
+                                  <fa-icon [icon]="faChart"></fa-icon>
+                                  Consumation
+                                </button>
+                              </div>
+                              <div class="text-center" *ngIf="this.showDate">
+                                <button type="button" (click)="closeConsumation()" class="btn btn-submit">
+                                  <fa-icon [icon]="faChart"></fa-icon>
+                                  Close
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <tr>
+                      </tr>
+                    </div>
+                  </div>
+                  <td *ngIf="!this.device" style="margin-left: 30px!important;">No Device Found!</td>
+                </section>
+              </div>
+              <div *ngIf="showConsumation" class="b">
+
+                <app-chart></app-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+
+</div>
+
+

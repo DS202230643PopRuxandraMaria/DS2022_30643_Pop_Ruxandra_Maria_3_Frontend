@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  angular-service:
+    image: containerregistrynamepopruxandramaria30643.azurecr.io/popruxandramaria30643frontendok:latest
+    ports:
+      - "82:82"
+    stdin_open: true
+    tty: true
+
+
+

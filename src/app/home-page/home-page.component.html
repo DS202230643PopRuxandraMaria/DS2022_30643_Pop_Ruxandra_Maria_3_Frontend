@@ -1,0 +1,52 @@
+<mdb-carousel class="carousel slide carousel-fade" [controls]="true" [type]="'carousel-thumbnails'"
+              [animation]="'fade'">
+
+  <mdb-carousel-item *ngFor="let tempImage of images">
+
+    <img class="d-block w-100 img" src={{tempImage}}>
+    <div class="carousel-content">
+      <p class="a"> &nbsp; &nbsp; BUILD THE FUTURE</p>
+      <p class="b">Energy infrastructure is the place to start</p>
+    </div>
+  </mdb-carousel-item>
+</mdb-carousel>
+
+<mdb-card>
+  <mdb-card-body>
+    <div class="d-flex">
+
+      <div class="container">
+        <img class="d-block w-100 " src="./assets/img/ruxi.png">
+        <div class="text">
+          <a class="name">Pop Ruxandra</a>
+
+          </div>
+        <div class="text">
+          <a class="director"> Director</a>
+
+
+        </div>
+
+      </div>
+
+      <div class=" bb  ">
+        <a class="c">About Us</a>
+        <a>
+          <div class="text2">
+
+            Energy Platform is a clean energy development and financing platform that helps government agencies,
+            utilities and commercial & industrial concerns prepare for the future through district-scale energy projects
+            that increase environmental and economic resilience. We de-risk, develop and finance every sort of
+            distributed energy asset – microgrids, solar, wind, fuel cells, battery storage, CHP and smart city assets.
+
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </mdb-card-body>
+</mdb-card>
+
+
+<img class="d-block w-100 " src="./assets/img/home.png">
+

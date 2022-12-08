@@ -1,0 +1,73 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <mat-card class="card">
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+          <h3 class="title">Update User</h3>
+
+        </mat-card-title>
+
+        <div fxLayout="column" fxLayoutGap="20px" fxLayout.gt-md="row" fxLayoutAlign="space-around center"
+             class="content">
+          <div class="blocks">
+            <button (click)="goTOUserPage()" mat-raised-button class=" btn add-button">
+
+              <fa-icon [icon]="faUndo"></fa-icon> &nbsp;Back
+            </button>
+          </div>
+        </div>
+        <div class="container" style="margin-top: 20px;">
+          <form>
+            <div class="table-content">
+              <div class="form-group p-10 row">
+                <div class="col-sm-3">
+                  <label for="FirstName" class="p-t-b-10">Username<span class="requiredStar">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="Username" disabled="true">
+                </div>
+              </div>
+              <div class="form-group p-10 row">
+                <div class="col-sm-3">
+                  <label for="FirstName" class="p-t-b-10">First Name<span class="requiredStar">*</span> </label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="FirstName" required maxlength="255">
+                </div>
+              </div>
+              <div class="form-group p-10 row">
+                <div class="col-sm-3">
+                  <label for="LastName" class="p-t-b-10">Last Name<span class="requiredStar">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="LastName" required maxlength="255">
+                </div>
+              </div>
+              <div class="form-group p-10 row">
+                <div class="col-sm-3">
+                  <label for="Address" class="p-t-b-10">Address<span class="requiredStar">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="Address" required maxlength="255">
+                </div>
+              </div>
+              <div class="form-group p-10 row">
+                <div class="col-sm-3">
+                  <label for="Password" class="p-t-b-10">Password<span class="requiredStar">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="password" class="form-control" id="Password" required maxlength="255">
+                </div>
+              </div>
+
+            </div>
+            <div class="all-button">
+            <button class="btn btn-submit" (click)="editUser()">Submit</button>
+            <button class="btn btn-submit" (click)="discardChanges()">Discard</button>
+        </div>
+          </form>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

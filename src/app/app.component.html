@@ -1,0 +1,98 @@
+
+<nav class="navbar fixed-top navbar-expand-md navbar-light white double-nav scrolling-navbar">
+  <div class="toolbar" role="banner">
+    <div class="col-sm-6 name-site">
+      <button mat-button routerLink="home" [disabled]="show">
+        <fa-icon [icon]="faBolt"></fa-icon>
+        Energy platform
+      </button>
+    </div>
+    <div class="button-site" [class]="this.isLogged()? 'button-site' : 'button-site2'">
+      <button *ngIf="this.isLogged() && !this.getRole()" mat-button [disabled]="this.show" (click)="isClicked()">     <fa-icon [icon]="faBell"></fa-icon></button>
+      <button *ngIf="this.isLogged() && !this.getRole()" mat-button  [disabled]="this.show" routerLink="app-client-page">Your Device</button>
+      <button *ngIf="this.isLogged() && this.getRole()" mat-button  [disabled]="this.show" mat-button routerLink="app-device-page">Devices
+      </button>
+      <button *ngIf="this.isLogged() && this.getRole() "  [disabled]="this.show"mat-button routerLink="app-user-page">Users</button>
+      <button *ngIf="!this.isLogged()" mat-button  [disabled]="this.show" routerLink="login">Login</button>
+
+      <button *ngIf="this.isLogged()" mat-button [disabled]="this.show" (click)="logOut()">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <div>
+      <a class="me-4 text-reset">
+        <fa-icon [icon]="faFacebook"></fa-icon>
+      </a>
+      <a class="me-4 text-reset">
+        <fa-icon [icon]="faInstagram"></fa-icon>
+      </a>
+      <a class="me-4 text-reset">
+        <fa-icon [icon]="faTwitter"></fa-icon>
+      </a>
+      <a class="me-4 text-reset">
+        <fa-icon [icon]="faLinkedin"></fa-icon>
+      </a>
+      <a class="me-4 text-reset">
+        <fa-icon [icon]="faGoogle"></fa-icon>
+      </a>
+    </div>
+  </section>
+
+
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Values</h6>
+          <p><a class="text-reset">Innovation </a></p>
+          <p><a class="text-reset">Diversity</a></p>
+          <p><a class="text-reset">Prosperity </a></p>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+          <p><a class="text-reset">Solar Panel </a></p>
+          <p><a class="text-reset">Wind Turbine</a></p>
+          <p><a class="text-reset">Electric Device</a></p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4"><h6 class="text-uppercase fw-bold mb-4">
+          Contact</h6>
+          <p><i class="me-3">
+            <fa-icon [icon]="faHome"></fa-icon>
+          </i> Cluj Napoca, CJ 400001, RO
+          </p>
+          <p><i class="me-3">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
+          </i>energyplat@ro.energy.com
+          </p>
+          <p><i class="me-3">
+            <fa-icon [icon]="faPhone"></fa-icon>
+          </i> + 40 784 940 234
+          </p>
+          <p><i class="me-3">
+            <fa-icon [icon]="faPrint"></fa-icon>
+          </i> + 40 023 393 349
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">© 2022 Copyright : <a
+    class="text-reset fw-bold"> Pop Ruxandra Maria</a>
+    <p> Connect - Articulate - Innovate</p>
+  </div>
+</footer>

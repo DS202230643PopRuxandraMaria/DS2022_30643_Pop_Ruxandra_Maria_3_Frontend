@@ -1,0 +1,25 @@
+.button-cancel {
+  width: 70px !important;
+  height: 30px !important;
+  position: relative !important;
+  margin-left: 41% !important;
+  margin-top: 5% !important;
+}
+
+.img {
+  height: 90px !important;
+  margin-top: 10px !important;
+  margin-left: 40% !important;
+  margin-bottom: 10px !important;
+}
+
+.textW {
+  margin-left: 40% !important;
+  font-weight: 500 !important;
+  font-size: 20px;
+}
+
+
+.ll{
+  width:500px;
+}
